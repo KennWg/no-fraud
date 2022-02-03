@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
   }
 
   body {
@@ -126,12 +127,14 @@ footer div {
 
 
 .box1{
-    width: 440px;
+    width: 390px;
     height: 300px;
-    background-color: blue;
     position: absolute;
     top: 679px;
     left: 0px;
+    background-color: brown;
+    overflow: hidden;
+  
 
 }
 
@@ -139,7 +142,6 @@ footer div {
 
     width: 440px;
     height: 300px;
-    background-color: #024e76;
     position: absolute;
     top: 679px;
     left: 370px;
@@ -154,4 +156,43 @@ footer div {
     right: 0px;
 
   }
+
+  /*-----------------recent search------------*/
+  div.recent-search{
+      height: 40px;
+      width: 440px;
+      background-color: #fce138;
+      padding: 0px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+  }
+
+  .recent-search h4{
+font-size: 20px;
+padding: 10px
+  }
+
+
+  .number-box  ul li {
+    font-size: 20px;
+    margin: 12px;
+    border-bottom: 2px solid black;
+    text-align: center;
+  }
+
+  .middle-history h4{
+  font-size: 20px;
+  color: black;
+    
+}
+
+.result-box{
+  display: inline-flex;
+align-items: flex-end;
+}
+
+
+
+
 
