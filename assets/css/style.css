@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    /* more on this crazy alphanumerical value in a minute! */
+    color: #39a6b2;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  header {
+    padding: 20px 35px;
+    background-color: green;
+  }
+
+  header h1 {
+    font-weight: bold;
+    font-size: 36px;
+    color: #fce138;
+    margin: 0;
+    display: inline;
+  }
+
+  header a {
+    text-decoration: none;
+    color: #fce138;
+  }
+
+  footer {
+    background: #fce138;
+    width: 100%;
+    padding: 40px 35px;
+  }
+
+  
+footer div {
+
+  font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  footer a {
+    color: #024e76;
+  }
