@@ -29,16 +29,17 @@
     <main class="hero-form">
         <!-- The searcheing area -->
         <div>
-            
             <!-- The box wraps the searching textarea -->
             <span>
                 <h3>PLease enter the phone number here</h3>
-                <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ratione nam blanditiis optio culpa corrupti labore, hic voluptate, dicta dolorum, minus accusamus voluptates ex obcaecati necessitatibus. Deleniti voluptatem earum in?</p>
-                <form>
-                    <label for="phone">Enter a telephone number:</label>
-        <input type="text" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
-            
-                <button>Search</button>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ratione nam blanditiis optio culpa corrupti
+                    labore, hic voluptate, dicta dolorum, minus accusamus voluptates ex obcaecati necessitatibus. Deleniti
+                    voluptatem earum in?</p>
+                <form id="phone-form">
+                    <label for="phone">Enter a telephone number (including country and area code):</label>
+                    <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
+                    <p id="form-message">Please enter a number using only numerals (0-9)</p>
+                    <button type="submit">Search</button>
                 </form>
             </span>
 
@@ -121,7 +122,7 @@
           </div>
     </footer>
 
-    
+    <script src="./assets/js/script.js"></script>
 </body>
 
 
