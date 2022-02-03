@@ -6,9 +6,9 @@ var telForm = document.getElementById("phone-form"),
 
 var searchForm = function(event){
     event.preventDefault();
-    formMessage.textContent = "Please enter a number using only numerals (0-9)"
+    formMessage.textContent = "Searching..."
     formMessage.style = "color:black";
-    var phoneNumber = telInput.value;
+    var phoneNumber = telInput.value.trim();
     
     //check if phone number is a number and if the length is from 6-15 digits
     if(isNaN(phoneNumber)){
@@ -22,6 +22,17 @@ var searchForm = function(event){
         return null;
     }
 
+    //call tel api
+    var apiUrl = "https://phonevalidation.abstractapi.com/v1/?api_key=" + apiKey + "&phone=" + phoneNumber;
+
+    fetch(apiUrl).then(function(response){
+        response.json().then(function(data){
+            console.log(data);
+        });
+    }).catch(function(error){
+        formMessage.textContent = "Connection error!";
+        formMessage.style = "color:red";
+    });
 }
 
 //event listener
