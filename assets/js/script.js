@@ -56,7 +56,12 @@ var searchForm = function(event){
                     formMessage.style = "color:red";
                 });
             }
-
+            if(telLocation){
+            var apiUrl3 = "https://www.mapquestapi.com/staticmap/v5/map?key=" + apiKeyMap + "&center=" + telLocation + "&size=@2x";
+            } else {
+                var apiUrl3 = "https://www.mapquestapi.com/staticmap/v5/map?key=" + apiKeyMap + "&center=" + telCountry + "&zoom=5&size=@2x";
+            }
+           //display map function here using apiURL3 as the image
         });
     }).catch(function(error){
         formMessage.textContent = "Connection error!";
