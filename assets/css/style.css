@@ -23,18 +23,18 @@ header{
   position: sticky;
 
   top: 0;
-  background-image: url("../images/carpaltunnelphone_large.jpg");
+  /*background-image: url("../images/carpaltunnelphone_large.jpg");*/
   background-size: cover;
   background-attachment: fixed;
   background-position: 80%;
   z-index: 9999;
-  background-color: rgba(255, 225, 56, 0.8);
+  background-color: rgba(255, 225, 56, 0.7);
 }
 
   header h1 {
     font-weight: bold;
     font-size: 36px;
-    color: #fce138;
+    color: #FFD600;
     margin: 0;
     display: inline;
   }
@@ -68,26 +68,35 @@ footer div {
 
   /* Hero Style Start */
 .hero {
-    background-image: url('../images/carpaltunnelphone_large.jpg');
-    height: 600px;
+    background-image: url('../images/hero\ image.jpeg');
+    height: auto;
     background-size: cover;
     background-position: center;
     position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
   /* Hero Style End */
 
   .hero-form {
     border: 3px solid black;
-    background-color: green;
+    background-color:  #2F2424;
+    opacity: 0.8;
     padding: 20px;
-    width: 500px;
-    color: black;
-    height: 300px;
-    position: absolute;
-  bottom: 280px;
-  right: 320px;
-    
-    
+    width: 80%;
+    color:  #FFD600;
+    height: auto;
+    /*position: absolute;
+  bottom: 350px;
+  right: 320px;*/
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
   }
 
   .hero-form h3 {
@@ -120,45 +129,43 @@ footer div {
     font-size: 16px;
   }
 
-.big-box{
+/* .big-box{ 
     height: 300px;
     width: 500px;
-}
+ } */
 
 
-.box1{
+/*.box1{
     width: 390px;
     height: 300px;
-    position: absolute;
+    /*position: absolute;
     top: 679px;
     left: 0px;
     background-color: brown;
     overflow: hidden;
-  
+}*/
 
-}
-
-.box2{
+/*.box2{
 
     width: 440px;
     height: 300px;
-    position: absolute;
+    /*position: absolute;
     top: 679px;
     left: 370px;
-}
+}*/
 
 
-.contact-info iframe {
+/* .contact-info iframe {
     width: 450px;
     height: 300px;
     position: absolute;
     top: 679px;
     right: 0px;
 
-  }
+   } */
 
   /*-----------------recent search------------*/
-  div.recent-search{
+ /* div.recent-search{
       height: 40px;
       width: 440px;
       background-color: #fce138;
@@ -166,7 +173,7 @@ footer div {
       position: absolute;
       top: 0px;
       left: 0px;
-  }
+  }*/
 
   .recent-search h4{
 font-size: 20px;
@@ -193,6 +200,13 @@ align-items: flex-end;
 }
 
 
+
+@media screen and (max-width: 39.9375em) {
+
+  
+
+}
+  
 
 
 
