@@ -22,12 +22,41 @@ var searchForm = function(event){
         return null;
     }
 
-    //call tel api
-    var apiUrl = "https://phonevalidation.abstractapi.com/v1/?api_key=" + apiKey + "&phone=" + phoneNumber;
+    //call tel api 1
+    var apiUrl = "https://phonevalidation.abstractapi.com/v1/?api_key=" + apiKeyTel1 + "&phone=" + phoneNumber;
 
     fetch(apiUrl).then(function(response){
         response.json().then(function(data){
-            console.log(data);
+            if(data.registered_location){
+                //if api 1 returns the location, proceed, else try 2nd api
+                var telValid = data.is_valid_number,
+                    telCountry = data.country_code,
+                    telPrefix = data.country_prefix,
+                    telLocation = data.registered_location,
+                    telType = data.line_type,
+                    telCarrier = data.carrier;
+                console.log("API1:" + telValid + telCountry + telPrefix + telLocation + telType + telCarrier);
+                // createResultInfo(phoneNumber,telValid,telCountry,telPrefix,telLocation,telType,telCarrier);
+            } else {
+                //call tel api 2
+                var apiUrl2 = "http://apilayer.net/api/validate?access_key=" + apiKeyTel2 + "&number=" + phoneNumber;
+                fetch(apiUrl2).then(function(response2){
+                    response2.json().then(function(data2){
+                        var telValid = data2.valid,
+                            telCountry = data2.country_code,
+                            telPrefix = data2.country_prefix,
+                            telLocation = data2.telLocation,
+                            telType = data2.line_type,
+                            telCarrier = data2.carrier;
+                        console.log("API2:" + telValid + telCountry + telPrefix + telLocation + telType + telCarrier);
+                        // createResultInfo(phoneNumber,telValid,telCountry,telPrefix,telLocation,telType,telCarrier);
+                    })
+                }).catch(function(error){
+                    formMessage.textContent = "Connection error!";
+                    formMessage.style = "color:red";
+                });
+            }
+
         });
     }).catch(function(error){
         formMessage.textContent = "Connection error!";
