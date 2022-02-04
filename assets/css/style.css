@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  }
+
+  body {
+    color: #39a6b2;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  /*header {
+    padding: 20px 35px;
+    background-color: green;
+  }*/
+header{
+  padding: 20px 35px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: sticky;
+
+  top: 0;
+  background-image: url("../images/carpaltunnelphone_large.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 80%;
+  z-index: 9999;
+  background-color: rgba(255, 225, 56, 0.8);
+}
+
+  header h1 {
+    font-weight: bold;
+    font-size: 36px;
+    color: #fce138;
+    margin: 0;
+    display: inline;
+  }
+
+  header a {
+    text-decoration: none;
+    color: #fce138;
+  }
+
+  footer {
+    background: #fce138;
+    width: 100%;
+    padding: 40px 35px;
+  }
+
+  
+footer div {
+
+  font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  footer a {
+    color: #024e76;
+  }
+
+  section {
+    padding: 60px;
+  }
+
+  /* Hero Style Start */
+.hero {
+    background-image: url('../images/carpaltunnelphone_large.jpg');
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  /* Hero Style End */
+
+  .hero-form {
+    border: 3px solid black;
+    background-color: green;
+    padding: 20px;
+    width: 500px;
+    color: black;
+    height: 300px;
+    position: absolute;
+  bottom: 280px;
+  right: 320px;
+    
+    
+  }
+
+  .hero-form h3 {
+    font-size: 24px;
+    margin: 0;
+  }
+  .hero-form p {
+    margin: 5px 0 15px 0;
+  }
+
+  .form-input {
+    border: 1px solid #024e76;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: #024e76;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .hero-form label {
+    margin: 0 5px;
+  }
+
+  .hero-form button {
+    color: greenyellow;
+    background-color: red;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+.big-box{
+    height: 300px;
+    width: 500px;
+}
+
+
+.box1{
+    width: 390px;
+    height: 300px;
+    position: absolute;
+    top: 679px;
+    left: 0px;
+    background-color: brown;
+    overflow: hidden;
+  
+
+}
+
+.box2{
+
+    width: 440px;
+    height: 300px;
+    position: absolute;
+    top: 679px;
+    left: 370px;
+}
+
+
+.contact-info iframe {
+    width: 450px;
+    height: 300px;
+    position: absolute;
+    top: 679px;
+    right: 0px;
+
+  }
+
+  /*-----------------recent search------------*/
+  div.recent-search{
+      height: 40px;
+      width: 440px;
+      background-color: #fce138;
+      padding: 0px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+  }
+
+  .recent-search h4{
+font-size: 20px;
+padding: 10px
+  }
+
+
+  .number-box  ul li {
+    font-size: 20px;
+    margin: 12px;
+    border-bottom: 2px solid black;
+    text-align: center;
+  }
+
+  .middle-history h4{
+  font-size: 20px;
+  color: black;
+    
+}
+
+.result-box{
+  display: inline-flex;
+align-items: flex-end;
+}
+
+
+
+
+
