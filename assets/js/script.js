@@ -1,6 +1,6 @@
 data={
     "phone":"14152007986",
-    "valid":false,
+    "valid":true,
     "format":{
         "international":"+14152007986",
         "local":"(415) 200-7986"},
@@ -47,15 +47,20 @@ var creatResultInfo=function(validResponse){
             carrierEl);
 }
 
+$(".search-btn").click(function(){
+    event.preventDefault();
+    console.log("button clicked");
+});
+
 $(".middle-history")
     .find("h4")
-    .text("Your result for "+"14152007986")
+    .text("Your result for "+"14152007986");
 
 if (data.valid==true){
-    var validResponse="This is a valid phone number"
+    var validResponse="This is a valid phone number";
 }
 else{
-    var validResponse="This is a FAKE phone number"
-}
+    var validResponse="This is a FAKE phone number";
+};
 
 creatResultInfo(validResponse);
