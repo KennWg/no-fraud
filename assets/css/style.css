@@ -14,26 +14,16 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-
-/*header {
-    padding: 20px 35px;
-    background-color: green;
-  }*/
-
 header {
-    /* padding: 20px 35px; */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    /* position: sticky; */
     top: 0;
     background-image: url('../images/hero\ image.jpeg');
     background-size: cover;
-    /* background-attachment: fixed; */
     background-position: center;
     z-index: 9999;
     height: 50vh;
-    /* background-color: rgba(255, 225, 56, 0.7); */
 }
 
 header h1 {
@@ -91,7 +81,6 @@ br {
     height: auto;
     background-size: cover;
     background-position: center;
-    /* position: relative; */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -103,16 +92,11 @@ br {
 /* Hero Style End */
 
 .hero-form {
-    /* border: 3px solid black; */
     background-color: var(--darkBrown);
-    /* opacity: 0.8; */
     padding: 30px;
     width: 50%;
     color: var(--yellow);
     height: auto;
-    /*position: absolute;
-  bottom: 350px;
-  right: 320px;*/
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -133,8 +117,6 @@ br {
 
 .form-input {
     border: 1px solid #024e76;
-    /* display: block; */
-    /* padding: 7px 15px; */
     font-size: 16px;
     color: #024e76;
     width: 100%;
@@ -165,7 +147,6 @@ form {
     color: #000;
     background-color: var(--yellow);
     border: none;
-    /* padding: 10px 20px; */
     font-size: 16px;
     padding: 10px 25px;
     border-radius: 5px;
@@ -179,43 +160,6 @@ form {
 }
 
 
-/* .big-box{ 
-    height: 300px;
-    width: 500px;
- } */
-
-
-/*.box1{
-    width: 390px;
-    height: 300px;
-    /*position: absolute;
-    top: 679px;
-    left: 0px;
-    background-color: brown;
-    overflow: hidden;
-}*/
-
-
-/*.box2{
-
-    width: 440px;
-    height: 300px;
-    /*position: absolute;
-    top: 679px;
-    left: 370px;
-}*/
-
-
-/* .contact-info iframe {
-    width: 450px;
-    height: 300px;
-    position: absolute;
-    top: 679px;
-    right: 0px;
-
-   } */
-
-
 /*-----------------recent search------------*/
 
 #left-box {
@@ -224,13 +168,7 @@ form {
 }
 
 div.recent-search {
-    /* height: 40px;
-      width: 440px; */
     background-color: #fce138;
-    /* padding: 0px;
-      position: absolute;
-      top: 0px;
-      left: 0px; */
 }
 
 .recent-search h4 {
@@ -277,12 +215,6 @@ ul {
     text-align: center;
 }
 
-
-/* .result-box {
-    display: inline-flex;
-    align-items: flex-end;
-} */
-
 .grid-x,
 .cell {
     padding: 0;
@@ -309,5 +241,22 @@ iframe {
     }
     header h1 {
         margin: 5px auto auto 30px;
+    }
+    header {
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .hero-form {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+    .hero-form {
+        width: 100%;
+        padding: 10px;
     }
 }
