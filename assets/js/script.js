@@ -92,7 +92,9 @@ var mapDisplay=function(mapURL){
         .addClass("map")
         .attr("src",mapURL,
             "alt","location_map",
-            "style","boarder:0;");
+            "style","boarder:0",
+            "allowfullscreen","",
+            "loading","lazy");
 
     $(".contact-info").append(mapEl);
 }
@@ -172,10 +174,30 @@ var phoneInfoDisplay=function(telValid,telCountry,telPrefix,telLocation,telType,
     creatResultInfo(validResponse,telCountry,telPrefix,telLocation,telType,telCarrier)
 }
 
+// Storage the data
+function dateStorage(phoneNumber){
+    localStorage.setItem(5,phoneNumber)
+}
+
+//Load the data
+function dataLoading(){
+    for (var i=0;i<5;i++){
+        var id="#"+i;
+        console.log(id)
+        var historyNum=JSON.parse(localStorage.getItem(i));
+        $(id).text(historyNum);
+    }
+}
+
 //event listener
 telForm.addEventListener("submit",function(){
     event.preventDefault();
+    // dataLoading()
+
     console.log("button clicked");
+
+    var phoneNumber = telInput.value.trim();
+    // dateStorage(phoneNumber);
 
     // reset the display box to prevent dulicate display.
     $(".result-list").remove();
