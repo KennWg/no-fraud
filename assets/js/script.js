@@ -27,13 +27,13 @@ var searchForm = function(event){
 
     fetch(apiUrl).then(function(response){
         response.json().then(function(data){
-            if(data.registered_location){
+            if(data.location){
                 //if api 1 returns the location, proceed, else try 2nd api
-                var telValid = data.is_valid_number,
-                    telCountry = data.country_code,
-                    telPrefix = data.country_prefix,
-                    telLocation = data.registered_location,
-                    telType = data.line_type,
+                var telValid = data.valid,
+                    telCountry = data.country.name,
+                    telPrefix = data.country.prefix,
+                    telLocation = data.location,
+                    telType = data.type,
                     telCarrier = data.carrier;
                 console.log("API1:" + telValid + telCountry + telPrefix + telLocation + telType + telCarrier);
                 // createResultInfo(phoneNumber,telValid,telCountry,telPrefix,telLocation,telType,telCarrier);
@@ -42,13 +42,28 @@ var searchForm = function(event){
                 var apiUrl2 = "http://apilayer.net/api/validate?access_key=" + apiKeyTel2 + "&number=" + phoneNumber;
                 fetch(apiUrl2).then(function(response2){
                     response2.json().then(function(data2){
-                        var telValid = data2.valid,
-                            telCountry = data2.country_code,
-                            telPrefix = data2.country_prefix,
-                            telLocation = data2.telLocation,
-                            telType = data2.line_type,
-                            telCarrier = data2.carrier;
-                        console.log("API2:" + telValid + telCountry + telPrefix + telLocation + telType + telCarrier);
+                        //check if api2 returns valid response
+                        if(data2.valid){
+                            var telValid = data2.valid,
+                                telCountry = data2.country_name,
+                                telPrefix = data2.country_prefix,
+                                telLocation = data2.location,
+                                telType = data2.line_type,
+                                telCarrier = data2.carrier;
+                            console.log("API2:" + telValid + telCountry + telPrefix + telLocation + telType + telCarrier);
+                        } else if (data.valid) {
+                            var telValid = data.valid,
+                                telCountry = data.country.name,
+                                telPrefix = data.country.prefix,
+                                telLocation = data.location,
+                                telType = data.type,
+                                telCarrier = data.carrier;
+                            console.log("API1:" + telValid + telCountry + telPrefix + telLocation + telType + telCarrier);
+                        } else {
+                            formMessage.textContent = "Invalid telephone number.";
+                            formMessage.style = "color:red";
+                            return null;
+                        }
                         // createResultInfo(phoneNumber,telValid,telCountry,telPrefix,telLocation,telType,telCarrier);
                     })
                 }).catch(function(error){
