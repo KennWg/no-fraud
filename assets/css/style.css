@@ -36,6 +36,10 @@ header h1 {
     margin: 10px auto auto 30px;
 }
 
+main{
+    min-height: 50vh;
+}
+
 header a {
     text-decoration: none;
     color: #fce138;

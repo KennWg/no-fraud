@@ -236,6 +236,9 @@ var creatResultInfo=function(validResponse,telCountry,telPrefix,telLocation,telT
 
 // Display the input phone number
 var phoneNumDisplay=function(phoneNumber){
+
+    $(".result-num").remove();
+
     resultNum=$("<li>")
             .addClass("result-num")
             .text(phoneNumber);
