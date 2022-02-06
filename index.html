@@ -1,113 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> NO-FRAUD </title>
+    <link rel="stylesheet" href="./assets/css/foundation/foundation.css">
+    <link rel="stylesheet" href="./assets/css/foundation/foundation.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-        
+
     <header>
+        <div class="logo"></div>
         <h1> NoFraud </h1>
-        
+        <!-------------------Jumbotron---------------------->
+        <section class="hero">
+            <div class="hero-form">
+                <!-- The searcheing area -->
+                <!-- The box wraps the searching textarea -->
+                <span>
+                    <h3>Phone Number Validator Lookup</h3>
+                    <p> Enter the phone number here to identify invalid or disconnected phone numbers that likely represent a fraudulent user with an inactive phone number.</p>
+                    <form id="phone-form">
+                        <label for="phone">Enter a telephone number (including country and area code):</label>
+                        <div class="grid-x grid-margin-x inputField">
+                            <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="cell small-12 medium-8 large-10 form-input" />
+                            <button class="cell small-12 medium-4 large-2" type="submit">Search</button>
+                            <p id="form-message">Please enter a number using only numerals (0-9)</p>
+                        </div>
+                    </form>
+                </span>
+            </div>
+        </section>
     </header>
-    
 
-<!-------------------Jumbotron---------------------->
-
-
-<section class="hero">    
-
-    <main class="hero-form">
-        <!-- The searcheing area -->
-        <div>
-            <!-- The box wraps the searching textarea -->
+    <main class="big-box grid-x grid-padding-x">
+        <!-- The left search history box -->
+        <section id="left-box" class="box cell small-12 medium-4 large-2 box1">
             <span>
-                <h3>PLease enter the phone number here</h3>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ratione nam blanditiis optio culpa corrupti
-                    labore, hic voluptate, dicta dolorum, minus accusamus voluptates ex obcaecati necessitatibus. Deleniti
-                    voluptatem earum in?</p>
-                <form id="phone-form">
-                    <label for="phone">Enter a telephone number (including country and area code):</label>
-                    <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
-                    <p id="form-message">Please enter a number using only numerals (0-9)</p>
-                    <button type="submit">Search</button>
-                </form>
+                <div class="recent-search">
+                    <h4>Recent Search</h4>
+                </div>
             </span>
 
-        </div>
+            <span class="number-box">
+                <!-- this will be deleted, data will update dynamically -->
+                <ul></ul>
+            </span>
+        </section>
 
+        <!-- The middle info display box -->
+        <section id="middle-box" class="box cell small-12 medium-4 large-5 box2">
+            <span class="middle-history grid-x">
+                <h4 class="cell small-12 medium-12 large-4">Your result for:</h4>
+
+                <div class="result-box cell small-12 medium-12 large-5">
+                    <!-- this will be deleted, data will update dynamically -->
+                    <li class="result-num">123-456-7890</li>
+                </div>
+            </span>
+        </section>
+
+        <!-- The right map box -->
+        <section id="right-box" class="contact-info cell small-12 medium-4 large-5 box box3">
+            <iframe 
+                class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.1079747227936!2d-120.42364418397035!3d37.92790791110593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8090c49129b6ac57%3A0xb56c7eb95a2cd8bd!2sMain%20St%2C%20California%2095327!5e0!3m2!1sen!2sus!4v1616426329495!5m2!1sen!2sus"
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </section>
     </main>
- </section>
-
-
-    <section class="big-box">
-        
-        <div>
-
-            <!-- The left search history box -->
-            <section id="left-box" class="box  box1">
-                <span>
-                    <div class="recent-search" >
-                    <h4>Recent Search</h4>
-                    </div>
-                </span>
-        
-                <span class="number-box">
-                    <ul>
-                        <li id="1"></li>
-                        <li id="2"></li>
-                        <li id="3"></li>
-                        <li id="4"></li>
-                        <li id="5"></li>                        
-                    </ul>
-                </span>
-            </section>
-            
-            <!-- The middle info display box -->
-            <section id="middle-box" class="box box2">
-                <span class="middle-history">
-                    <h4>Your result for</h4>
-
-                    <div class="result-box">
-                        <ul class="result-list"></ul>                      
-                    </div>
-    
-                </span>                      
-               
-            </section>
-
-            <!-- The right map box -->
-            <section  id="right-box"  class="contact-info  box box3">
-                 
-                <iframe class="map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.1079747227936!2d-120.42364418397035!3d37.92790791110593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8090c49129b6ac57%3A0xb56c7eb95a2cd8bd!2sMain%20St%2C%20California%2095327!5e0!3m2!1sen!2sus!4v1616426329495!5m2!1sen!2sus"
-                    style="border:0;" 
-                    allowfullscreen=""
-                    loading="lazy">
-                </iframe>
-            
-            </section>
-
-        </div>
-
-    </section>
-
     <footer>
-       
         <div>
-            <a href="#">Read Our Privacy Policy</a><br />
-            &copy; 2022 NoFraud. All right reserved
-          </div>
+            <a href="#">Read Our Privacy Policy</a><br /> &copy; 2022 NoFraud. All right reserved
+        </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="assets\js\script.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/apikey.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
-
 
 </html>
