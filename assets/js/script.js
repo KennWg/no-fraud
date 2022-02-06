@@ -18,7 +18,7 @@ var searchForm = function(event) {
     formMessage.textContent = "Searching..."
     formMessage.style = "color:black";
     var phoneNumber = telInput.value.trim();
-
+    
     //check if phone number is a number and if the length is from 6-15 digits
     if (isNaN(phoneNumber)) {
         formMessage.textContent = "Please use only numerals in your phone number.";
@@ -30,6 +30,9 @@ var searchForm = function(event) {
         formMessage.style = "color:red";
         return null;
     }
+
+    //Display the phone number in the result box
+    phoneNumDisplay(phoneNumber);
 
     //call tel api 1
     var apiUrl = "https://phonevalidation.abstractapi.com/v1/?api_key=" + apiKeyTel1 + "&phone=" + phoneNumber;
@@ -233,9 +236,10 @@ var creatResultInfo=function(validResponse,telCountry,telPrefix,telLocation,telT
 
 // Display the input phone number
 var phoneNumDisplay=function(phoneNumber){
-    $(".middle-history")
-        .find("result-num")
-        .text(phoneNumber);
+    resultNum=$("<li>")
+            .addClass("result-num")
+            .text(phoneNumber);
+    $(".result-box").append(resultNum);
 }
 
 // enpower the results after pressing the search button
