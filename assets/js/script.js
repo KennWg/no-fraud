@@ -14,6 +14,7 @@ var telForm = document.getElementById("phone-form"),
 // form handler
 
 var searchForm = function(event) {
+
     // event.preventDefault();
     formMessage.textContent = "Searching..."
     formMessage.style = "color:black";
@@ -49,7 +50,9 @@ var searchForm = function(event) {
                     telCarrier = data.carrier;
                 console.log("API1:" + telValid + telCountry + telPrefix + telLocation + telType + telCarrier);
                 // createResultInfo(phoneNumber,telValid,telCountry,telPrefix,telLocation,telType,telCarrier);
+
                 phoneInfoDisplay(telValid,telCountry,telPrefix,telLocation,telType,telCarrier);
+
             } else {
                 //call tel api 2
                 var apiUrl2 = "http://apilayer.net/api/validate?access_key=" + apiKeyTel2 + "&number=" + phoneNumber;
@@ -78,7 +81,9 @@ var searchForm = function(event) {
                             return null;
                         }
                         // createResultInfo(phoneNumber,telValid,telCountry,telPrefix,telLocation,telType,telCarrier);
+
                         phoneInfoDisplay(telValid,telCountry,telPrefix,telLocation,telType,telCarrier);
+
                     })
                 }).catch(function(error) {
                     formMessage.textContent = "Connection error!";
@@ -93,6 +98,7 @@ var searchForm = function(event) {
             
             //display map function here using apiURL3 as the image
             mapDisplay(apiUrl3);
+
         });
     }).catch(function(error) {
         formMessage.textContent = "Connection error!";
@@ -269,6 +275,7 @@ telForm.addEventListener("submit", function(){
       
     searchForm();
 });
+
 
 // function when user press enter key
 telInput.addEventListener('keyup', function(event) {
