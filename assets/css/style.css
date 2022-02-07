@@ -41,6 +41,10 @@ header a {
     color: #fce138;
 }
 
+main{
+    min-height: 50vh;
+}
+
 .logo {
     width: 100%;
     background-color: var(--yellow);
@@ -73,7 +77,6 @@ section {
 br {
     color: #000;
 }
-
 
 /* Hero Style Start */
 
