@@ -212,10 +212,6 @@ function historyList() {
 
     //reset input field after press button or enter
 
-    var clickedNum = document.querySelector('.numList');
-    clickedNum.addEventListener('click', recentNumber);
-    recentSearch.addEventListener('click', recentNumber);
-
 };
 
 function loadHistory(lastIndex) {
@@ -241,13 +237,6 @@ function loadHistory(lastIndex) {
         recentNumSearched.textContent = searchHistory[i];
         histotyList.prepend(recentNumSearched);
     }
-
-    var clickedNum = document.querySelector('.numList');
-
-    //for the last search
-    recentSearch.addEventListener('click', recentNumber);
-    //for clicking on other recent search list
-    clickedNum.addEventListener('click', recentNumber);
     loadLatestSearch();
 };
 
@@ -296,6 +285,13 @@ telForm.addEventListener("submit", function(event){
     var phoneNumber = telInput.value; 
     searchForm(phoneNumber);
 });
+
+recentSearch.addEventListener("click", function(event){
+    if($(event.target).parent().hasClass('numList')){
+        console.log(event.target);
+        recentNumber(event);
+    }
+})
 
 
 // function when user press enter key
