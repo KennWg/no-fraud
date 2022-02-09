@@ -192,7 +192,7 @@ function historyList() {
     var searchedTel = telInput.value;
     console.log(searchedTel);
     //condition avoid repeat # on the array
-    if (!searchHistory.includes(searchedTel)) {
+    if (!searchHistory.includes(searchedTel) && searchedTel != "") {
         //put new search phone number on search history array
         searchHistory.push(searchedTel);
 
@@ -255,7 +255,7 @@ function loadHistory(lastIndex) {
 var loadLatestSearch = function() {
 
     //get the lasted search
-    if (searchHistory !== null) {
+    if (searchHistory[0] !== null) {
         var lastSearchedIndex = searchHistory.length - 1;
         var lastSearchedNum = searchHistory[lastSearchedIndex];
         formMessage.textContent = "Seaching Completed!";
