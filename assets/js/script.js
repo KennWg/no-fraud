@@ -1,24 +1,22 @@
 // import api key for Abstract API
-var apiKeyTel1="67fbd798cbc74fddaee6c95cf604308a";
+// var apiKeyTel1="67fbd798cbc74fddaee6c95cf604308a";
 // import api key for numberify API
-var apiKeyTel2="bdc7f61860e05e5ba773ad3b44017274";
+// var apiKeyTel2="bdc7f61860e05e5ba773ad3b44017274";
 // import api key for MapQuest API
-var apiKeyMap="jDRCcpslgqlzGKPpjn9f6ElnCMI8W49W";
+// var apiKeyMap="jDRCcpslgqlzGKPpjn9f6ElnCMI8W49W";
 
 var telForm = document.getElementById("phone-form"),
     telInput = document.getElementById("phone"),
     formMessage = document.getElementById("form-message"),
-    recentSearch = document.querySelector(".number-box"),
+    recentSearch = document.querySelector("#number-box"),
     searchHistory = [];
 
 // form handler
-
-var searchForm = function(event) {
-
+var searchForm = function(phoneNumber) {
     // event.preventDefault();
-    formMessage.textContent = "Searching..."
-    formMessage.style = "color:black";
-    var phoneNumber = telInput.value.trim();
+    formMessage.textContent = "Searching completed!"
+    formMessage.style = "color:white";
+    // var phoneNumber = telInput.value.trim();
     
     //check if phone number is a number and if the length is from 6-15 digits
     if (isNaN(phoneNumber)) {
@@ -108,82 +106,6 @@ var searchForm = function(event) {
     historyList();
 };
 
-//function save history after a search occurs
-function historyList() {
-    var searchedTel = telInput.value.trim();
-    //condition avoid repeat # on the array
-    if (!searchHistory.includes(searchedTel)) {
-        //put new search phone number on search history array
-        searchHistory.push(searchedTel);
-
-        var displayRecentSearch = $(`
-            <ul>
-                <li class="numList">${searchedTel}</li>
-            </ul>
-        `);
-
-        $(".number-box").append(displayRecentSearch);
-
-    }
-    console.log(searchHistory);
-
-    //saved recent search
-    localStorage.setItem("searchedTel", JSON.stringify(searchHistory));
-
-    //reset input field after press button or enter
-    searchedTel.value = ""
-};
-
-function loadHistory(lastIndex) {
-    searchHistory = JSON.parse(localStorage.getItem("searchedTel"));
-    console.log(searchHistory);
-
-    if (!searchHistory) {
-        searchHistory = [];
-        return false;
-    } else if (searchHistory.length > 5) {
-        //store max 5 recent search
-        searchHistory.shift();
-    }
-
-    //when user click on the recent searched list, load the data 
-    var histotyList = document.createElement('ul');
-    histotyList.className = 'numList';
-    recentSearch.appendChild(histotyList);
-
-    for (var i = 0; i < searchHistory.length; i++) {
-        var recentNumSearched = document.createElement('li');
-        recentNumSearched.setAttribute('value', searchHistory[i]);
-        recentNumSearched.textContent = searchHistory[i];
-        histotyList.prepend(recentNumSearched);
-    }
-
-    var clickedNum = document.querySelector('.numList');
-
-    //for the last search
-    recentSearch.addEventListener('click', recentNumber);
-    //for clicking on other recent search list
-    clickedNum.addEventListener('click', recentNumber);
-
-    loadLatestSearch();
-};
-
-//function load the lastest search on the screen
-var loadLatestSearch = function() {
-    //get the lasted search
-    if (historyList !== null) {
-        var lastSearchedIndex = historyList.length - 1;
-        var lastSearchedCity = historyList[lastSearchedIndex];
-    }
-};
-
-//function get value on the recent # put on the recent search list
-var recentNumber = function(event) {
-    var selectedNum = event.target.getAttribute('value');
-};
-
-//displays the loaded history when the page first loads
-loadHistory();
 
 var mapDisplay=function(mapURL){
         
@@ -228,7 +150,7 @@ var creatResultInfo=function(validResponse,telCountry,telPrefix,telLocation,telT
         .addClass("phone-carrier")
         .text("Carrier: "+telCarrier);
     
-    $(".result-box")
+    $(".middle-history")
     .append(resultListEl);
         
     $(".result-list")
@@ -246,8 +168,9 @@ var phoneNumDisplay=function(phoneNumber){
     $(".result-num").remove();
 
     resultNum=$("<li>")
-            .addClass("result-num")
-            .text(phoneNumber);
+        .addClass("small-12 medium-12 large-8 result-num")
+        .text(phoneNumber);
+        
     $(".result-box").append(resultNum);
 }
 
@@ -263,17 +186,115 @@ var phoneInfoDisplay=function(telValid,telCountry,telPrefix,telLocation,telType,
     creatResultInfo(validResponse,telCountry,telPrefix,telLocation,telType,telCarrier)
 }
 
+
+//function save history after a search occurs
+function historyList() {
+    var searchedTel = telInput.value;
+    console.log(searchedTel);
+    //condition avoid repeat # on the array
+    if (!searchHistory.includes(searchedTel)) {
+        //put new search phone number on search history array
+        searchHistory.push(searchedTel);
+
+        var displayRecentSearch = $(`
+            <ul class="numList">
+                <button type = "button" value=${searchedTel}>${searchedTel}</button>
+            </ul>
+        `);
+        $("#number-box").append(displayRecentSearch);
+
+    }
+
+    //saved recent search
+    localStorage.setItem("searchedTel", JSON.stringify(searchHistory));
+
+    // console.log(searchHistory);
+
+    //reset input field after press button or enter
+
+    var clickedNum = document.querySelector('.numList');
+    clickedNum.addEventListener('click', recentNumber);
+    recentSearch.addEventListener('click', recentNumber);
+
+};
+
+function loadHistory(lastIndex) {
+    searchHistory = JSON.parse(localStorage.getItem("searchedTel"));
+    console.log(searchHistory);
+
+    if (!searchHistory) {
+        searchHistory = [];
+        return false;
+    } else if (searchHistory.length > 5) {
+        //store max 5 recent search
+        searchHistory.shift();
+    }
+
+    //when user click on the recent searched list, load the data 
+    var histotyList = document.createElement('ul');
+    histotyList.className = 'numList';
+    recentSearch.appendChild(histotyList);
+
+    for (var i = 0; i < searchHistory.length; i++) {
+        var recentNumSearched = document.createElement('button');
+        recentNumSearched.setAttribute('value', searchHistory[i]);
+        recentNumSearched.textContent = searchHistory[i];
+        histotyList.prepend(recentNumSearched);
+    }
+
+    var clickedNum = document.querySelector('.numList');
+
+    //for the last search
+    recentSearch.addEventListener('click', recentNumber);
+    //for clicking on other recent search list
+    clickedNum.addEventListener('click', recentNumber);
+    loadLatestSearch();
+};
+
+//function load the lastest search on the screen
+var loadLatestSearch = function() {
+
+    //get the lasted search
+    if (searchHistory !== null) {
+        var lastSearchedIndex = searchHistory.length - 1;
+        var lastSearchedNum = searchHistory[lastSearchedIndex];
+        formMessage.textContent = "Seaching Completed!";
+
+        phoneNumDisplay(lastSearchedNum);
+        searchForm(lastSearchedNum);
+    }
+};
+
+//function get value on the recent # put on the recent search list
+var recentNumber = function(event) {
+    var selectedNum = event.target.getAttribute('value');
+    
+    // remove the previous map
+    $(".map").remove();
+
+    // remove the previous searching results
+    $(".result-list").remove();
+
+    phoneNumDisplay(selectedNum);
+    searchForm(selectedNum);
+};
+
+//displays the loaded history
+loadHistory();
+
 //event listener
-telForm.addEventListener("submit", function(){
-    event.preventDefault();
+telForm.addEventListener("submit", function(event){
+
+    event.preventDefault(); 
 
     // remove the previous map
     $(".map").remove();
 
     // remove the previous searching results
     $(".result-list").remove();
-      
-    searchForm();
+  
+    var phoneNumber = telInput.value; 
+    searchForm(phoneNumber);
 });
 
 

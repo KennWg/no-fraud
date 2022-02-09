@@ -9,6 +9,11 @@
     --darkBrown: #2F2424;
 }
 
+.form-input{
+    font-size: 20px !important;
+    color: #000000 !important;
+}
+
 body {
     color: #39a6b2;
     font-family: Helvetica, Arial, sans-serif;
@@ -40,9 +45,11 @@ header a {
     text-decoration: none;
     color: #fce138;
 }
-
+h5{
+    color: #fff;
+}
 main{
-    min-height: 50vh;
+    min-height: 45vh;
 }
 
 .logo {
@@ -141,8 +148,8 @@ form {
 
 .hero-form label {
     margin: 0 5px;
-    color: #fff;
-    font-size: 18px;
+    color: var(--yellow);
+    font-size: 15px;
     padding-bottom: 10px;
 }
 
@@ -154,6 +161,7 @@ form {
     padding: 10px 25px;
     border-radius: 5px;
     font-weight: 600;
+    width: 100%;
 }
 
 .inputField {
@@ -184,29 +192,43 @@ div.recent-search {
 
 
 /*just for now, will change dynamicaly*/
-
-.number-box ul li {
+.numList {
+    margin: 0 ;
+    text-align: center;
+}
+button{
     font-size: 20px;
-    padding: 12px;
+    padding: 12px 0;
     border-bottom: 2px solid var(--yellow);
     text-align: center;
     color: #fff;
     list-style: none;
+    width: 100%;
+    margin: 0 ;
 }
+.numList{
+    cursor: pointer;;
 
+}
 ul {
     margin-left: 0;
 }
-
-.middle-history {
-    justify-content: center;
+#middle-box{
+    background-color: rgb(240, 236, 236);
 }
-
+.result-box {
+    width: 100%;
+    background-color: #fff;
+    padding: 15px !important;
+    border-radius: 10px;
+}
+.middle-history{
+    padding: 30px;
+}
 .middle-history h4 {
     font-size: 20px;
     color: black;
 }
-
 .result-num {
     list-style: none;
     background-color: var(--yellow);
@@ -214,10 +236,28 @@ ul {
     border-radius: 5px;
     color: #000;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
 }
+.result-list{
+    list-style: none;
 
+    color: #000;
+
+    font-size: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+.result-list li{
+    padding: 5px;
+}
+#right-box{
+    padding: 0;
+    overflow: hidden;
+}
 .grid-x,
 .cell {
     padding: 0;
@@ -225,9 +265,9 @@ ul {
 }
 
 iframe {
-    width: 100%;
-    height: 100%;
-    /*just for now, will change dynamicaly*/
+    width:100%;
+    height: 45vh;
+    overflow: hidden;
 }
 
 #middle-box {

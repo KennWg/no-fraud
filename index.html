@@ -12,8 +12,7 @@
 </head>
 
 <body>
-
-    <header>
+   <header>
         <div class="logo"></div>
         <h1> NoFraud </h1>
         <!-------------------Jumbotron---------------------->
@@ -22,13 +21,14 @@
                 <!-- The searcheing area -->
                 <!-- The box wraps the searching textarea -->
                 <span>
-                    <h3>Phone Number Validator Lookup</h3>
-                    <p> Enter the phone number here to identify invalid or disconnected phone numbers that likely represent a fraudulent user with an inactive phone number.</p>
+                    <h2>Phone Number Validator</h2>
+                    <h5> Enter the phone number here to identify invalid or disconnected phone numbers that likely represent a fraudulent user with an inactive phone number.
+                    </h5>
                     <form id="phone-form">
                         <label for="phone">Enter a telephone number (including country and area code):</label>
                         <div class="grid-x grid-margin-x inputField">
-                            <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="cell small-12 medium-8 large-10 form-input" />
-                            <button class="cell small-12 medium-4 large-2" type="submit">Search</button>
+                            <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="cell small-12 medium-8 large-9 form-input" />
+                            <button class="cell small-12 medium-4 large-3" type="submit">Search</button>
                             <p id="form-message">Please enter a number using only numerals (0-9)</p>
                         </div>
                     </form>
@@ -39,35 +39,27 @@
 
     <main class="big-box grid-x grid-padding-x">
         <!-- The left search history box -->
-        <section id="left-box" class="box cell small-12 medium-4 large-2 box1">
+        <section id="left-box" class="box cell small-12 medium-12 large-2 box1">
             <span>
                 <div class="recent-search">
                     <h4>Recent Search</h4>
                 </div>
             </span>
-
-            <span class="number-box">
-                <!-- this will be deleted, data will update dynamically -->
-
-                <ul></ul>
-
-            </span>
+            <div id="number-box">
+            </div>
         </section>
 
         <!-- The middle info display box -->
-        <section id="middle-box" class="box cell small-12 medium-4 large-5 box2">
-            <span class="middle-history grid-x">
-                <h4 class="cell small-12 medium-12 large-4">Your result for:</h4>
-
-                <div class="result-box cell small-12 medium-12 large-5">
-                    <!-- this will be deleted, data will update dynamically -->
-                </div>
-              
+        <section id="middle-box" class="box cell small-12 medium-12 large-5 box2">
+            <span class="middle-history">
+                <div class="result-box grid-x">
+                    <h4 class="cell small-12 medium-12 large-4 resultHeading">Your result for:</h4>
+                </div>             
             </span>
         </section>
 
         <!-- The right map box -->
-        <section id="right-box" class="contact-info cell small-12 medium-4 large-5 box box3">
+        <section id="right-box" class="contact-info cell small-12 medium-12 large-5 box box3">
 
             <iframe 
                 class="map"
@@ -75,8 +67,7 @@
                 style="border:0;" 
                 allowfullscreen="" 
                 loading="lazy">
-            </iframe>
-          
+            </iframe>         
         </section>
     </main>
     <footer>
