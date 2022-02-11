@@ -21,7 +21,7 @@
     - Map Quest
 
 ## Screenshot
-![screen shot NoFraud Phone Validation](assets/images/screenshot.png?raw=true "NoFraud Screenshot")
+![screen shot NoFraud Phone Validator](assets/images/screenshot.png?raw=true "NoFraud Screenshot")
 
 ## Web URL
 https://kennwg.github.io/no-fraud/
