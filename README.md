@@ -10,12 +10,6 @@
     - 190 countries supported
     - Get GEO location
 
-<!-- ## Our Team Members and Roles
-    - Kiranjot Kaur:  CSS and HTML
-    - Kenneth Wong: both API function calls and the form handler for the search button
-    - Sophie Quan:  save search history into local storage and load search history
-    - Enshen Zhu: displaying the loaded history data on screen and displaying the data from the API calls on screen -->
-
 ## Built with
     - HTML
     - CSS
@@ -27,9 +21,10 @@
     - Map Quest
 
 ## Screenshot
-
-## Demo
+![screen shot NoFraud Phone Validation](assets/images/screenshot.png?raw=true "NoFraud Screenshot")
 
 ## Web URL
+https://kennwg.github.io/no-fraud/
 
 ## Github repo URL
+https://github.com/KennWg/no-fraud.git
